@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+
+    INVOLT FOR MOBILE
+
+    This file contains Phonegap settings for Mobile version of Involt framework. 
+
+    For desktop see package.json and for connection settings settings.js
+
+-->
+
+<widget xmlns     = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "io.github.involt"
+        version   = "1.1.0">
+
+    <name>Involt for Mobile</name>
+
+    <description>
+        Mobile version of Involt framework. Use with Bluetooth 2.0 and Android.
+    </description>
+
+    <author href="http://involt.github.io" email="ernestwarzocha@gmail.com">
+        Involt, Ernest Warzocha
+    </author>
+
+    <preference name='phonegap-version' value='cli-7.0.1' />
+
+    <preference name="permissions"                value="none"/>
+    <preference name="orientation"                value="default" />
+    <preference name="target-device"              value="universal" />
+    <preference name="fullscreen"                 value="false" />
+    <preference name="android-installLocation"    value="auto" />
+    <preference name="webviewbounce"              value="true" />
+
+    <plugin name="cordova-plugin-chrome-apps-bluetooth" source="npm"/>
+    <plugin name="cordova-plugin-chrome-apps-bluetoothsocket" source="npm"/>
+
+    <!--Temporary fix for permissions issue in manifest, BT LE is not supported-->
+    <plugin name="cordova-plugin-ble-central" source="npm" />
+
+    <platform name="android">
+        <icon src="www/img/icons/icon-pg.png" />
+        <icon src="www/img/icons/android/icon-36-ldpi.png"      density="ldpi" />
+        <icon src="www/img/icons/android/icon-48-mdpi.png"      density="mdpi" />
+        <icon src="www/img/icons/android/icon-72-hdpi.png"      density="hdpi" />
+        <icon src="www/img/icons/android/icon-96-xhdpi.png"     density="xhdpi" />
+        <icon src="www/img/icons/android/icon-144-xxhdpi.png"   density="xxhdpi" />
+        <icon src="www/img/icons/android/icon-192-xxxhdpi.png"  density="xxxhdpi" />
+    </platform>
+
+    <access origin="*"/>
+    <plugin name="cordova-plugin-whitelist" version="1" />
+    <allow-intent href="http://*/*" />
+    <!--<allow-intent href="file://*/*" />-->
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+
+</widget>
